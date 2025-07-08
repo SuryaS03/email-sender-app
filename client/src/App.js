@@ -132,9 +132,14 @@ function App() {
       <h1 className="heading-premium">Email Sender via Google Sheet</h1>
 
       <div className="card">
-        <label className="note-text">
-          Note: Make sure your Google Sheet is set to <b>Public Access</b> or <b>Anyone with the link can view</b> before loading columns.
-        </label>
+       <label className="note-text">
+  <p><b>Note:</b></p>
+  <ul>
+    <li>Make sure your Google Sheet is set to <b>Public Access</b> or <b>Anyone with the link can view</b> before loading columns.</li>
+    <li>Only fully filled columns are loaded. Partially filled columns will be ignored.</li>
+  </ul>
+</label>
+
         <input
           className="input-box"
           type="text"
