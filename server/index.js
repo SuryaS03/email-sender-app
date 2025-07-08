@@ -7,8 +7,16 @@ const nodemailer = require('nodemailer');
 require('dotenv').config(); // Load environment variables
 
 const app = express();
-app.use(cors());
 app.use(express.json());
+const corsOptions = {
+  origin: 'https://email-sender-app-pink.vercel.app',
+  methods: ['GET', 'POST'],
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
+
 
 app.get('/', (req, res) => {
   res.send('Backend is running!');
